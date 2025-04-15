@@ -1,7 +1,7 @@
 +++++++++++++++++++++++++VIRTUAL DOM++++++++++++++++++++
 
 
-"createroot" method : create a dom of it's own DOM and compare it with 
+"createroot" method : create a DOM of it's own, and compare it with 
 our DOM. 
 
 
@@ -12,10 +12,10 @@ React Fiber Architecture : -----------
 * Goal is to increase its suitability for areas like animation, layout, and gesture. 
 * it's headline feature is incremental rendering: the ability too split rendering into chunks and spread it out over multiple frames.
 
-* other features include ability to pause, abort or reuse work as new updates in; the ability to assign priorty to diiferent types of updates; and new concurrency primitives.
+* other features include ability to pause, abort or reuse work as new updates in; the ability to assign priority to different types of updates; and new concurrency primitives.
 
 
-Reconcillation --------------
+Reconcilliation --------------
 
 the algo React uses to diff one tree with another to determine which part to be changed.
 
@@ -24,24 +24,24 @@ the algo React uses to diff one tree with another to determine which part to be 
 the idea is of react api is to think of updates as if they cause the entire app to re-render.
 
 
-Reconcillation is the algorithm behind what is popularly understood as "virtual DOM".
+Reconcilliation is the algorithm behind what is popularly understood as "virtual DOM".
 
------ when we render a react application, tree of nodes that describe the app generated and saved in the memory. this tree is the flushed to the rendering environment - for example , in case of a browser application it's translated to a set of DOM operations. when the app is updated (usually via setState), a new tree is generated . the new treee is diffed with the previous tree to compute which operations are needed to update the rendered app.
+----- when we render a react application, tree of nodes that describe the app generated and saved in the memory. this tree is the flushed to the rendering environment - for example , in case of a browser application it's translated to a set of DOM operations. when the app is updated (usually via setState), a new tree is generated . the new tree is diffed with the previous tree to compute which operations are needed to update the rendered app.
 
 
-* different components types are assumed to generate substantially different trees , REact will not attempt to diff them, but rather replace the odd tree completely.
+* different components types are assumed to generate substantially different trees , React will not attempt to diff them, but rather replace the odd tree completely.
 
 Diffing of lists id performed using keys. Keys should be "stable, predictable, and unique."
 
 
 
-Reconcillation v/s Rendering ------------------------
+Reconcilliation v/s Rendering ------------------------
 
 
-the DOM is just one of the rendering environment React can render to , the other major targets being native ios and android views via react Native.
+the DOM is just one of the rendering environment React can render to , the other major targets being native IOS and android views via react Native.
 
 
-the reason it can support so many targets is because react is designed so that reconcillation and rendering are separate phases. the reconciler does the work of computing which parts of a tree have changed; the renderer then uses that info to actually update the rendered app.
+the reason it can support so many targets is because react is designed so that reconcilliation and rendering are separate phases. the reconciler does the work of computing which parts of a tree have changed; the renderer then uses that info to actually update the rendered app.
 
 
 
