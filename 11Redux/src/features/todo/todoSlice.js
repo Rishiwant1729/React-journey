@@ -1,7 +1,7 @@
 import {createSlice, nanoid} from '@reduxjs/toolkit';
 
 const initialState = {
-    todos: [{id: 1, text: 'learning redux'}]
+    todos: []
 }
 
 export const todoSlice = createSlice({
@@ -40,6 +40,15 @@ export default todoSlice.reducer;
 // name: The name of the slice. This is used to prefix the action types.
 // initialState: The initial state of the slice.
 // reducers: An object containing the reducer functions. Each function will automatically generate an action creator.
+// state is the current state of the slice.
+// action is the action object that was dispatched.
+// The addTodo reducer adds a new todo item to the state.
+// The removeTodo reducer removes a todo item from the state based on its ID.
+// The updateTodo reducer updates a todo item in the state based on its ID.
+// The todoSlice.reducer is the reducer function that will be used in the Redux store.
+// The todoSlice.actions object contains the action creators for each of the reducers.
+
+// initialState is the initial state of the slice. It contains a todos array with one todo item.
 
 
 
