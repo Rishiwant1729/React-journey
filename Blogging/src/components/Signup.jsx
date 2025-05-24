@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import authService from "../appwrite/auth";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../store/authSlice";
@@ -89,4 +89,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default Signup
