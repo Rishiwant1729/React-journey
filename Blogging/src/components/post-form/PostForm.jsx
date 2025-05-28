@@ -100,11 +100,16 @@ export default function PostForm({ post }) {
                 />
                 {post && (
                     <div className="w-full mb-4">
-                        <img
-                            src={appwriteService.getFilePreview(post.featuredImage)}
-                            alt={post.title}
-                            className="rounded-lg"
-                        />
+                        {post.featuredImage ? (
+                            <img
+                                src={appwriteService.getFilePreview(post.featuredImage)}
+                                alt={post.title || "Featured Image"}
+                                className="rounded-lg"
+                                onError={(e) => (e.currentTarget.style.display = "none")}
+                            />
+                        ) : (
+                            <p className="text-gray-500">No featured image available</p>
+                        )}
                     </div>
                 )}
                 <Select
